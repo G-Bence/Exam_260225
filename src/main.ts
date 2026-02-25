@@ -7,8 +7,7 @@ const articleContainer = document.getElementById("articleContainer") as HTMLElem
 const inputForm = document.getElementById("inputForm") as HTMLFormElement
 
 let contentContainer: Blog[] = [new Blog("I love pigeons", "They are so adorable", "#ffffff"), new Blog("Spotify 4ever!", "I listenig to music right now =)", "#1DB954")]
-
-displayBlogs()
+//displayBlogs()
 
 function displayBlogs() {
   articleContainer.innerHTML = ""
@@ -18,6 +17,8 @@ function displayBlogs() {
     const articel = document.createElement("article")
     const h2 = document.createElement("h2")
     const p = document.createElement("p")
+
+    console.log(element)
 
     h2.innerText = element.title
     p.innerText = element.content
@@ -37,16 +38,20 @@ function displayBlogs() {
   });
 }
 
-inputForm.addEventListener("submit", () => {
+inputForm.addEventListener("submit", (e) => {
+  e.preventDefault()
   try {
-   contentContainer.push(new Blog(titleInput.value, contentInput.value, colorInput.value))
-    titleInput.value = ""
-    contentInput.value = ""
-    colorInput.value = ""
+    contentContainer.push(new Blog(titleInput.value, contentInput.value, colorInput.value))
   }
   catch (err) {
     alert(err)
   }
-
-  displayBlogs()
+  finally {
+    displayBlogs()
+    titleInput.value = ""
+    contentInput.value = ""
+    colorInput.value = ""
+  }
 })
+
+displayBlogs()
