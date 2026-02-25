@@ -3,9 +3,9 @@ export default class Blog {
     content: string;
     color: string;
 
-    constructor(title: string, content: string, color: string){
+    constructor(title: string, content: string[], color: string){
         this.title = title
-        this.content = content
+        this.content = content.join("\n\n")
         this.color = color
 
         if (this.title.length <= 0){

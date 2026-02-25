@@ -13,12 +13,12 @@
 
 <body>
   <div class="container mt-4">
-    <div class="row text-center">
-      <h1 class="mt-4 h1 text-white">Share your thoughts in a new blog!</h1>
+    <div class="row">
+      <h1 class="mt-4 h1 text-white text-center">Share your thoughts in a new blog!</h1>
     </div>
     <div class="row mt-5">
-      <div class="col-sm-6 mx-auto">
-        <form id="inputForm">
+      <div class="col-sm-12 col-mb-8 col-lg-6 mx-auto">
+        <form id="inputForm" data-bs-theme="dark">
           <div class="mb-3">
             <label for="titleInput" class="form-label text-white">Title of the blog</label>
             <input type="text" class="form-control" id="titleInput">
@@ -29,6 +29,9 @@
           </div>
           <div class="mb-3">
             <label class="form-check-label text-white" for="colorInput">Select a color for the blog</label>
+            <input type="color" class="form-control form-control-color w-100" id="colorInput" value="#563d7c"
+              title="Choose your color">
+            <!-- 
             <select class="form-select" id="colorInput">
               <option selected>Open this select menu and select a color</option>
               <option value="#d81919" style="background-color: #d81919 !important; color: #fff !important;">Red</option>
@@ -49,13 +52,18 @@
               <option value="#000000" style="background-color: #000000 !important; color: #fff !important;">Black
               </option>
             </select>
+            -->
+
+
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <div class="row" style="height: 5vh;">
+            <button type="submit" class="btn btn-primary w-50 mt-2 mx-auto" id="submitButton">Submit Post</button>
+          </div>
         </form>
       </div>
     </div>
-    <h1 class="mt-4 h1 text-white text-center">See available posts</h1>
-    <main class="row w-50 mt-3 mx-auto" id="articleContainer">
+    <h1 class="mt-5 h1 text-white text-center">See available posts</h1>
+    <main class="container col-sm-12 col-mb-8 col-lg-6 mt-3 mb-5 mx-auto" id="articleContainer">
 
     </main>
   </div>
